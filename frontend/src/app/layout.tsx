@@ -38,7 +38,7 @@ export default function RootLayout({
             </div>
             <div className="headerMain">
               <Image
-                className="logo"
+                className="afnArrow"
                 src="/arrow.png"
                 alt="Afternight Logo"
                 width={32}

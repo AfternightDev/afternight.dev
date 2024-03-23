@@ -73,6 +73,77 @@ a {
   animation: backgroundLoop 1s linear infinite;
 }
 
+.main2 {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: -1;
+  
+  position: fixed;
+  gap: 8px;
+  top: 50%;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+  animation: textFloat 3s ease-in-out infinite;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8,8,8,0.5);
+
+  width: fit-content;
+
+  border: rgba(255, 255, 255, 0.1) solid 2px;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 0px;
+}
+
+.title {
+  padding: 0px;
+  margin: 0px;
+}
+
+.link {
+  --bg-size: 400%;
+  background: linear-gradient(90deg, rgb(158, 92, 200) 00%, rgb(201, 125, 174) 25%, rgba(250,91,147) 45%, rgba(250,91,147) 55%, rgba(201, 125, 174) 75%, rgba(158, 92, 200) 100%) 0 0 / var(--bg-size) 100%;
+  animation: move-gradient 10s ease infinite;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 3;
+}
+
+@keyframes textFloat {
+  0% { transform: translate(-50%,  calc(-50% - 1vh)); }
+  50%  { transform: translate(-50%, calc(-50% + 1vh)); }
+  100%   { transform: translate(-50%, calc(-50% - 1vh)); }    
+}
+
+.afnArrow {
+  transform: rotate(15deg);
+}
+
+@keyframes move-gradient {
+  to {
+      background-position: var(--bg-size) 0;
+  }
+}
+
 @keyframes backgroundLoop {
   0% {
     transform: translate(0) rotate(45deg);
